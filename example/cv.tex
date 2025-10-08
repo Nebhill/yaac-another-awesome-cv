@@ -12,16 +12,17 @@
 
 \documentclass[localFont,alternative,10pt,compact]{yaac-another-awesome-cv}
 \usepackage{csquotes}
-\name{Nabil}{Laabd}
-\tagline{Architecte Collaboratif M365 / SharePoint | Expert ECM }
+\usepackage{fontspec}
+\name{Nabil}{Laabid}
+\tagline{Site Reliability Engineer \textbar Cloud \& Observability Expert }
 \photo{2.5cm}{nla}
 \socialinfo{
 	\linkedin{nabil-laabid}\\
 	% \github{nebhill}\\
 	\smartphone{+336 508 530 05}
 	\email{nabil.laabid@outlook.com}\\
-	\address{03 Rue du Quatelbach, 68390 Battenheim, France}\\
-	\infos{Né le 09 Juin 1979 (46 ans) à Mulhouse, France}
+	\address{Battenheim, France \textbar Mobility FR/CH }\\
+    \infos{Né le 09 Juin 1979 (46 ans) à Mulhouse, France}
 }
 
 % Uncomment the following line and use a value from 1.5cm to 2.5cm
@@ -36,17 +37,27 @@
 
 	\makecvfooter
 		{\textsc{\today}} % \selectlanguage{english}\today
-		{\textsc{nabil laabid - architecte collaboratif m365 / SharePoint | Expert ECM}} %\selectlanguage{english}Nabil Laabid - IT Consultant | DevOps Engineer
+		{\textsc{nabil laabid - site reliability engineer \textbar cloud \& observability expert}} %\selectlanguage{english}Nabil Laabid - IT Consultant | DevOps Engineer
 		{\thepage}
 
-	\input{section_headline_archi}
-	\input{section_competences}				% Section compétence
-	\input{section_experience_short}		% Section expérience
-	\input{section_scolarite}				% Section scolarité
-	\input{section_langues}					% Section langues
-	\input{section_interets}				% Section intérêts
-	%\input{section_projets}
-	%\input{section_references} 				% Section références
-	%\input{section_publications}			% Section publications
+	%\input{fr_section_headline_archi}
+	%\input{fr_section_competences}				% Section compétence
+	%\input{fr_section_experience_short}		% Section expérience
+	%\input{fr_section_scolarite}				% Section scolarité
+	%\input{fr_section_langues}					% Section langues
+	%\input{fr_section_interets}				% Section intérêts
+	%\input{fr_section_projets}
+	%\input{fr_section_references} 				% Section références
+	%\input{fr_section_publications}			% Section publications
+
+	\input{en_section_headline_archi}
+	\input{en_section_competences}				% Section compétence
+	\input{en_section_experience_short}		% Section expérience
+	\input{en_section_scolarite}				% Section scolarité
+	\input{en_section_langues}					% Section langues
+	\input{en_section_interets}				% Section intérêts
+	%\input{en_section_projets}
+	%\input{en_section_references} 				% Section références
+	%\input{en_section_publications}			% Section publications
 
 \end{document} 
