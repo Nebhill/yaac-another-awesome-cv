@@ -416,9 +416,29 @@
 
 % Render a skill in the skills environment
 % Usage: \skill{<skill>}{<level>}
-\newcommand\skill[2]{
-  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircle[regular]}{\faCircle}}\enspace } \\
+%\newcommand\skill[2]{
+%  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircle[regular]}{\faCircle}}\enspace } \\
+%}
+
+
+%%%%%%%%
+%%%%%%%%
+
+% Render a skill in the skills environment
+% Usage: \skill{<skill>}{<level>}
+\newcommand\skill[2]{%
+  \textbf{#1} & 
+  \vphantom{A}\smash{\raisebox{-0.15ex}{%  % \smash pour éviter l'impact sur l'interligne
+    \foreach \x in {1,...,5}{%
+      {\color{accentcolor!80}%
+      \ifnumgreater{\x}{#2}{\faCircle[regular]}{\faCircle}%
+      }\hspace{0.15em}%
+    }%
+  }} \\[0.3em]  % ← ESPACE AJOUTÉ ICI
 }
+
+%%%%%%%%
+%%%%%%%%
 
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
 
