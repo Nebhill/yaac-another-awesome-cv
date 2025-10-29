@@ -199,6 +199,9 @@
 \newcommand{\mediumSymbol}{\faMedium}
 \newcommand{\bitbucketSymbol}{\faBitbucket}
 \newcommand{\websiteSymbol}{\faLink}
+\newcommand{\carSymbol}{{\textcolor{symbolcolor}{\faCarSide}}}
+\newcommand{\branchSymbol}{{\textcolor{symbolcolor}{\faCodeBranch}}}
+
 
 
 \newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{Black} }
@@ -289,6 +292,14 @@
 % Render author's mobile phone (optional)
 % Usage: \smartphone{<mobile phone number>}
 \newcommand*\smartphone[1]{\socialtext{\mobileSymbol}{#1}}
+
+% Render author's mobility (optional)
+% Usage: \mobility{<Country codes>}
+\newcommand*\car[1]{\socialtext{\carSymbol}{#1}}
+
+% Render author's branch project (optional)
+% Usage: \branch{<branch name>}
+\newcommand*\branch[1]{\socialtext{\branchSymbol}{#1}}
 
 % Render author's tagline
 \newcommand\resumetitle[1]{
@@ -416,8 +427,15 @@
 
 % Render a skill in the skills environment
 % Usage: \skill{<skill>}{<level>}
-\newcommand\skill[2]{
-  \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircle[regular]}{\faCircle}}\enspace } \\
+\newcommand\skill[2]{%
+  \textbf{#1} & 
+  \vphantom{A}\smash{\raisebox{-0.15ex}{%
+    \foreach \x in {1,...,5}{%
+      {\color{accentcolor!80}%
+      \ifnumgreater{\x}{#2}{\faCircle[regular]}{\faCircle}%
+      }\hspace{0.15em}%
+    }%
+  }} \\[0.3em]  % ← Modifiez cette valeur pour ajuster l'espace
 }
 
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
