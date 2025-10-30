@@ -438,6 +438,9 @@
   }} \\[0.3em]  % ← Modifiez cette valeur pour ajuster l'espace
 }
 
+%%%%%%%%
+%%%%%%%%
+
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
 
 % Define the 'experiences' environment
