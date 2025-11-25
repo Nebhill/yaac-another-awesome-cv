@@ -477,12 +477,14 @@
 %                    {<Technology list>}
 \newcommand\consultantexperience[9]{
   \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
-  \textbf{#5}    & \emph{#6} for \textsc{#7}                       				\\*
+  \textbf{#5}    & \emph{#6} pour \textsc{#7}                       				\\*
   				       & \begin{minipage}[t]{\rightcolumnlength}
   						        #8
                    	\end{minipage}										\\*
                  & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
   }
+
+  
 
 % Define the empty separator macro with different spacing according to document class option 'compact'
 \if@isCompact
