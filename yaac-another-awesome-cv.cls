@@ -66,7 +66,7 @@
 
 % Dependences
 %A Few Useful Packages
-\RequirePackage[english,french]{babel}
+\RequirePackage[french,english]{babel}
 \RequirePackage{fontspec} 					                 % for loading fonts
 \RequirePackage{url,parskip} 	    % other packages for formatting
 \RequirePackage[dvipsnames]{xcolor}
@@ -84,6 +84,13 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{ifthen}
 
+
+% Set document language at begin document
+\AtBeginDocument{%
+  \ifdefined\cvlang
+    \selectlanguage{\cvlang}%
+  \fi
+}
 
 % Define default accent colors
 \definecolor{basecolor}{HTML}{000066}       %BLUE
@@ -383,6 +390,11 @@
   \fancyfoot[C]{#2}
   \fancyfoot[R]{#3}
 }
+% Define 'for' text according to document language
+\newcommand{\ForText}{%
+  \iflanguage{french}{pour}{for}%
+}
+
 
 % Resume part title definition
 \newcommand\sectionTitle[2]{\section{\texorpdfstring{\color{accentcolor}#2\enspace \textsc{#1}}{#1}}}
@@ -477,7 +489,7 @@
 %                    {<Technology list>}
 \newcommand\consultantexperience[9]{
   \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
-  \textbf{#5}    & \emph{#6} for \textsc{#7}                       				\\*
+  \textbf{#5}    & \emph{#6} \ForText\ \textsc{#7}                       				\\*
   				       & \begin{minipage}[t]{\rightcolumnlength}
   						        #8
                    	\end{minipage}										\\*
